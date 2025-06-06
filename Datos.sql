@@ -1,7 +1,9 @@
 
 
 INSERT INTO clientes (nombre, telefono , direccion)
-VALUES ('Danilo Muskus', '3003417554', 'Calle 61#22c-45');
+VALUES ('Danilo Muskus',    '3003417554',   'Calle 61#22c-45',
+        'Nicolas Muskus',   '3192733605',   'Calle 63#22c-45'
+);
 
 INSERT INTO producto (nombre, tipo, tamaño, precio)
 VALUES ('Pizza Campesina', 'pizza', 'mediana', 3500);
@@ -43,3 +45,15 @@ WHERE cliente_id = 1;
 DELETE FROM producto
 WHERE id_producto = 2 AND tipo = 'Bebida';
 
+DELETE FROM ingrediente
+WHERE id_ingrediente = 1;
+
+SELECT *
+FROM pedido
+WHERE cliente_id = 1;
+
+SELECT *
+FROM producto;
+
+SELECT *
+FROM ingrediente;
