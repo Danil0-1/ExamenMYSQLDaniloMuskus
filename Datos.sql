@@ -73,3 +73,7 @@ FROM clientes AS c
 JOIN pedido AS p ON c.cliente_id = p.cliente_id
 GROUP BY c.cliente_id
 HAVING total_pedidos > 5;
+
+SELECT *
+FROM pedido
+WHERE (fecha_hora_recogida) > '2025/06/07 13:00:00'
