@@ -5,7 +5,12 @@ VALUES  ('Danilo Muskus',    '3003417554',   'Calle 61#22c-45'),
         ('Nicolas Muskus',   '3192733605',   'Calle 63#22c-45');
 
 INSERT INTO producto (nombre, tipo, tamaño, precio)
-VALUES ('Pizza Campesina', 'pizza', 'mediana', 3500);
+VALUES  ('Pizza Campesina', 'pizza', 'mediana', 3500),
+        ('Pizza Carne', 'pizza', 'grande', 5500),
+        ('Pizza Hawayana 🤮', 'pizza', 'pequeña', 1),
+        ('Danilos Pizza', 'pizza', 'Extra grande', 6900),
+        ('Pizza Queso', 'pizza', 'mediana', 6500)
+;
 
 INSERT INTO producto (nombre, tipo, tamaño, precio)
 VALUES ('Coca-Cola', 'bebida', 'mediana', 2000);
@@ -77,3 +82,7 @@ HAVING total_pedidos > 5;
 SELECT *
 FROM pedido
 WHERE (fecha_hora_recogida) > '2025/06/07 13:00:00'
+
+SELECT *
+FROM producto
+WHERE tipo = 'pizza' AND precio > 100

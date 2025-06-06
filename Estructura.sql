@@ -15,7 +15,7 @@ CREATE TABLE producto (
     id_producto INT AUTO_INCREMENT PRIMARY KEY, 
     nombre VARCHAR(100), 
     tipo ENUM('pizza', 'bebida') NOT NULL, 
-    tamaño ENUM('pequena', 'mediana', 'grande') NULL, 
+    tamaño ENUM('pequena', 'mediana', 'grande', 'Extra grande') NULL, 
     precio DECIMAL(10,2) NOT NULL 
 );
 
@@ -72,4 +72,3 @@ CREATE TABLE combo_producto (
     FOREIGN KEY (id_combo) REFERENCES combo(id_combo), 
     FOREIGN KEY (id_producto) REFERENCES producto(id_producto) 
 );
-
