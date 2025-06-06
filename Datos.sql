@@ -1,9 +1,8 @@
 
 
 INSERT INTO clientes (nombre, telefono , direccion)
-VALUES ('Danilo Muskus',    '3003417554',   'Calle 61#22c-45',
-        'Nicolas Muskus',   '3192733605',   'Calle 63#22c-45'
-);
+VALUES  ('Danilo Muskus',    '3003417554',   'Calle 61#22c-45'),
+        ('Nicolas Muskus',   '3192733605',   'Calle 63#22c-45');
 
 INSERT INTO producto (nombre, tipo, tamaño, precio)
 VALUES ('Pizza Campesina', 'pizza', 'mediana', 3500);
@@ -15,10 +14,21 @@ INSERT INTO ingrediente (nombre, precio_extra)
 VALUES ('Chorizo', 1500);
 
 INSERT INTO pedido (cliente_id, fecha_hora_recogida, estado_pago)
-VALUES (1, '2025/06/06 13:41:00', TRUE);
+VALUES  (1, '2025/06/06 13:00:00', TRUE),
+        (1, '2025/06/07 13:00:00', TRUE),
+        (1, '2025/06/08 13:00:00', TRUE),
+        (1, '2025/06/09 13:00:00', TRUE),
+        (1, '2025/06/10 13:00:00', TRUE),
+        (1, '2025/06/11 13:00:00', TRUE);
 
 INSERT INTO pedido_producto (id_pedido , id_producto, cantidad)
-VALUES (1,1,2);
+VALUES  (1,1,2),
+        (1,1,2),
+        (1,1,2),
+        (1,1,2),
+        (1,1,2),
+        (1,1,2),
+        (1,1,2);
 
 INSERT INTO pedido_ingrediente_extra (id_pedido_producto, id_ingrediente)
 VALUES (1,1);
@@ -46,7 +56,7 @@ DELETE FROM producto
 WHERE id_producto = 2 AND tipo = 'Bebida';
 
 DELETE FROM ingrediente
-WHERE id_ingrediente = 1;
+WHERE id_ingrediente = 2;
 
 SELECT *
 FROM pedido
@@ -57,3 +67,9 @@ FROM producto;
 
 SELECT *
 FROM ingrediente;
+
+SELECT c.nombre, COUNT(p.id_pedido) AS total_pedidos
+FROM clientes AS c 
+JOIN pedido AS p ON c.cliente_id = p.cliente_id
+GROUP BY c.cliente_id
+HAVING total_pedidos > 5;
