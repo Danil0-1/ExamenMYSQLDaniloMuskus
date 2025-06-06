@@ -7,7 +7,6 @@ USE Examen;
 CREATE TABLE clientes (
     cliente_id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
-    email VARCHAR(50) NOT NULL UNIQUE, 
     telefono VARCHAR(20),
     direccion VARCHAR(100)
 );
@@ -16,7 +15,7 @@ CREATE TABLE producto (
     id_producto INT AUTO_INCREMENT PRIMARY KEY, 
     nombre VARCHAR(100), 
     tipo ENUM('pizza', 'bebida') NOT NULL, 
-    tamanio ENUM('pequena', 'mediana', 'grande') NULL, 
+    tamaño ENUM('pequena', 'mediana', 'grande') NULL, 
     precio DECIMAL(10,2) NOT NULL 
 );
 
