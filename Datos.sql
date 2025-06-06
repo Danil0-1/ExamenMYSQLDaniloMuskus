@@ -31,3 +31,15 @@ JOIN producto AS pr ON pp.id_producto = pr.id_producto
 LEFT JOIN pedido_ingrediente_extra AS pie ON pp.id_pedido_producto = pie.id_pedido_producto
 LEFT JOIN ingrediente AS ing ON pie.id_ingrediente = ing.id_ingrediente
 WHERE p.id_pedido = 1;
+
+UPDATE producto
+SET precio = 5000
+WHERE id_producto = 1;
+
+UPDATE clientes 
+SET direccion = 'Calle 62#22c-45'
+WHERE cliente_id = 1; 
+
+DELETE FROM producto
+WHERE id_producto = 2 AND tipo = 'Bebida';
+
