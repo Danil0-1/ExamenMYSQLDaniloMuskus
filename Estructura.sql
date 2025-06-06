@@ -1,4 +1,8 @@
 -- Active: 1749208756264@@127.0.0.1@3307@Examen
+DROP DATABASE Examen; 
+CREATE DATABASE Examen;
+
+USE Examen;
 
 CREATE TABLE clientes (
     cliente_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -69,3 +73,4 @@ CREATE TABLE combo_producto (
     FOREIGN KEY (id_combo) REFERENCES combo(id_combo), 
     FOREIGN KEY (id_producto) REFERENCES producto(id_producto) 
 );
+
